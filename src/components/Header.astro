@@ -1,2 +1,27 @@
----
----
+<div x-data="{ showmenu: false }" class="absolute top-5 w-full px-5 text-sm text-black z-50">
+<header class="flex justify-between items-center relative">
+<!-- Logo -->
+<a href="/" class="font-normal">selmastilling</a>
+
+<!-- Desktop Menu -->
+<nav id="desktopmenu" class="hidden lg:block">
+<ul class="flex flex-row gap-6 font-normal">
+<li><a href="/contact" class="hover:text-[#1100FF] transition">Contact</a></li>
+</ul>
+</nav>
+
+<!-- Burger Menu (Mobil) -->
+<button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu" aria-expanded="showmenu">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+</svg>
+</button>
+</header>
+
+<!-- Mobile Menu -->
+<nav id="mobilmenu" class="flex flex-col items-center pt-4 bg-white shadow-md absolute w-full left-0 top-14 transition-transform transform origin-top scale-y-0" x-bind:class="showmenu ? 'scale-y-100' : 'scale-y-0'" x-on:click.outside="showmenu = false">
+<ul class="text-center font-normal">
+<li><a href="/contact" class="hover:text-[#1100FF] transition">Contact</a></li>
+</ul>
+</nav>
+</div>

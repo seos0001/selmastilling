@@ -1,0 +1,22 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import mig from "../assets/images/mig.webp";
+---
+
+<MainLayout>
+  <section class="flex flex-col items-center justify-center h-screen text-center relative">
+    <div class="flex flex-col items-center space-y-3">
+      <!-- Telefon link -->
+      <a href="tel:+4524443051" class="block text-lg text-black my-1">+45 2444 3051</a>
+      
+      <!-- E-mail link -->
+      <a href="mailto:menna.ostergaard@gmail.com" class="block text-lg text-black my-1">menna.ostergaard@gmail.com</a>
+      
+      <!-- LinkedIn link (erstat 'din_linkedin_profil' med din LinkedIn URL) -->
+      <a href="https://www.linkedin.com/in/selma-stilling-østergaard-a08054238/" class="block text-lg text-black my-1" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </section>
+</MainLayout>
