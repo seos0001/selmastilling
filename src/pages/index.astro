@@ -1,0 +1,27 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import mig from "../assets/images/mig.webp";
+---
+
+<MainLayout>
+  <section class="flex flex-col items-center justify-center h-screen text-center relative">
+    <div class="flex flex-col items-center">
+      <!-- Juster størrelsen på billedet her -->
+      <img src={mig.src} alt="mig" class="w-32 h-auto" />
+      <div class="mt-5">
+        <a href="/about" class="block text-lg text-black my-1">( about )</a>
+        <a href="/projects" class="block text-lg text-black my-1">( projekter )</a>
+      </div>
+    </div>
+    <footer class="absolute bottom-5 w-full flex justify-between px-5 text-sm text-black">
+      <p>call me +45 24 44 30 51</p>
+      <p>menna.ostergaard@gmail.com</p>
+    </footer>
+  </section>
+</MainLayout>
+
+
+
