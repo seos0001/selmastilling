@@ -4,15 +4,38 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import mig from "../assets/images/mig.webp";
+import balash from "../assets/images/balash.webp";
+import blomst from "../assets/images/blomst.webp";
+import folder_indhold from "../assets/images/folder_indhold.webp";
+import folder_bord from "../assets/images/folder_bord.webp";
+import tekno_popup from "../assets/images/tekno_popup.webp";
 ---
 
 <MainLayout>
-  <section class="flex flex-col items-center justify-center h-screen text-center relative">
-    <div class="flex flex-col items-center space-y-3">
-<p>liste over projekter</p>
+  <section class="flex flex-col items-center justify-center text-center py-10">
+    <h1 class="font-light text-2xl md:text-3xl mb-8">Liste over projekter</h1>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 md:px-8">
+      {[ 
+        { img: blomst, title: "Skitsering til projekt 2024" },
+        { img: balash, title: "Balash Visuel Identitet 2024" },
+        { img: folder_indhold, title: "Kvinder I Kunsten - Aktivistisk Projekt, October 2022" },
+        { img: folder_bord, title: "Kvinder I Kunsten - Aktivistisk Projekt, flyer, October 2022" },
+        { img: tekno_popup, title: "Tekno Popup" },
+        { img: blomst, title: "Skitsering til projekt 2024" },
+        { img: tekno_popup, title: "Tekno Popup" },
+        { img: folder_indhold, title: "Kvinder I Kunsten - Aktivistisk Projekt, October 2022" }
+      ].map(({ img, title }) => (
+        <div class="flex flex-col items-center text-center">
+          <div class="w-48 h-48 rounded-md overflow-hidden hover:scale-105 transition-transform duration-300 ease-in-out">
+            <img src={img.src} alt={title} class="w-full h-full object-cover" />
+          </div>
+          <p class="text-sm md:text-base mt-3">{title}</p>
+        </div>
+      ))}
     </div>
   </section>
 </MainLayout>
+
 
 
 
